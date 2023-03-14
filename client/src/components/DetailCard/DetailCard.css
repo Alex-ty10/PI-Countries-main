@@ -1,0 +1,73 @@
+.card-details {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.card-details__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.card-details__title {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.card-details__info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-details__info p {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.card-details__activities {
+  width: 100%;
+}
+
+.card-details__activities h3 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.card-details__activity {
+  display: inline-block;
+  background-color: #f2f2f2;
+  color: #333;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.card-details__activity--spring {
+  background-color: #00cc99;
+  color: #fff;
+}
+
+.card-details__activity--summer {
+  background-color: #ffcc00;
+  color: #fff;
+}
+
+.card-details__activity--autumn {
+  background-color: #ff9900;
+  color: #fff;
+}
+
+.card-details__activity--winter {
+  background-color: #6699ff;
+  color: #fff;
+}
