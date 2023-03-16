@@ -107,7 +107,7 @@ const Form = () => {
     setError(
       {
         ...input,
-        countries: input.countries.filter(c => c != country)
+        countries: input.countries.filter(c => c !== country)
       }
     )
   }
@@ -125,14 +125,14 @@ const Form = () => {
         season: '',
         countries: [],
       });
-     /*  history.push('/home') */
+      history.push('/home')
     } else{
       alert('please complete the options')
     }
   };
   return(
     <div>
-      <NavLink to='/home'><button className="back-btn">volver</button></NavLink>
+      
       <h1>create your activity!!</h1>
 
       
@@ -234,6 +234,8 @@ const Form = () => {
 
     </div>
       </form>
+
+      <NavLink to='/home'><button className="back-btn">volver</button></NavLink>
      
     </div>
   )

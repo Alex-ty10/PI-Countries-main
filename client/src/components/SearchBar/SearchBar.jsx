@@ -1,16 +1,24 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { getCountryName } from "../../redux/actions";
 import './SearchBar.css'
 
 const SearchBar = () => {
+  const dispatch = useDispatch()
   const [name, setName] =  useState('');
-  function handleInputName(e) {
+
+  const handleOnChange = (e) => {
     e.preventDefault();
     setName(e.target.value)
   }
 
-  function handleClickSearch(e){
-    setName('')
+  function handleClick(e){
+    e.preventDefault()
+    if(name){
+      dispatch(getCountryName(name))
+      setName('')
+    }
   };
    
   return (
@@ -19,10 +27,10 @@ const SearchBar = () => {
         <input className='search-bar__input'
                type='text'
                value={name}
-               onChange={e => handleInputName(e)}
+               onChange={e => handleOnChange(e)}
                placeholder='search a country'/>
         <NavLink to={`/search/${name}`}>
-          <button className='search-bar__btn' onClick={e => handleClickSearch(e)}>Search</button>
+          <button className='search-bar__btn' onClick={e => handleClick(e)}>Search</button>
         </NavLink>
       </form>
     </div>

@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllActivities, filterByActivities, filterByContinent } from '../../redux/actions';
+import {useHistory} from 'react-router'
 
 
 const OrderingFilters = ({ onChangeName, onChangePopulation }) => {
-
+  
+  const history = useHistory();
   const dispatch = useDispatch();
   const activities = useSelector(state => state.activities);
   const countries =  useSelector(state => state.countries);
@@ -28,7 +30,10 @@ const OrderingFilters = ({ onChangeName, onChangePopulation }) => {
     dispatch(filterByContinent(e.target.value))
   }
 
-  
+  const handlerClearFilter = () => {
+    history.go(0);
+};
+
 
   return ( 
     <div className='container'>
@@ -58,6 +63,8 @@ const OrderingFilters = ({ onChangeName, onChangePopulation }) => {
         <option key={continent} value={continent}>{continent}</option>
         ))}
       </select>
+
+      <button className='button' onClick={handlerClearFilter}>Clear Filters</button>
 
     </div>
   );

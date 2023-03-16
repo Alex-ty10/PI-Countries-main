@@ -12,6 +12,7 @@ router.get('/', async (req, res, next) => {
     if(!name) return res.status(200).json(countries);
 
     const countryName =  await getCountryByName(name);
+    if(!countryName.length) return res.status(404).send('I cant get that country')
     return res.status(200).json(countryName)
   } catch (e) {
     return next(e)

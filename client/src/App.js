@@ -4,7 +4,6 @@ import Home from './components/Home/Home';
 import DetailCard from './components/DetailCard/DetailCard';
 import Landing from './components/Landing/Landing';
 import Form from './components/Form/Form';
-import SearchName from './components/SearchName/SearchName';
 import NavBar from './components/NavBar/NavBar';
 
 function App() {
@@ -25,11 +24,6 @@ function App() {
       <Route exact path='/create'>
         <Form/>
       </Route>
-
-      <Route exact path='/search/:name'>
-        <SearchName/>
-      </Route>
-
 
       <Route exact path='/countries/:id'>
         <DetailCard/>

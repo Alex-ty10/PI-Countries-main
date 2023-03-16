@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import{ useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import {Link, useParams } from 'react-router-dom';
 import { getCountryID } from '../../redux/actions/index';
 import './DetailCard.css';
 
@@ -24,13 +24,18 @@ const DetailCard = () => {
         <p><strong>Population:</strong> {population}</p>
         <div className="card-details__activities">
           <h3>Activities:</h3>
-          <ul>
-            {activities?.map(activity => (
-              <li key={activity.id} className={`card-details__activity card-details__activity--${activity.season}`}>{activity.name}</li>
-            ))}
-          </ul>
+          {activities && activities.length > 0 ? (
+            <ul>
+              {activities.map(activity => (
+                <li key={activity.id} className={`card-details__activity card-details__activity--${activity.season}`}>{activity.name}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>No activities yet</p>
+          )}
         </div>
       </div>
+      <Link to='/home'><button className="back-btn">volver</button></Link>
     </div>
   );
 }

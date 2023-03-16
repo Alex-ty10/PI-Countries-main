@@ -27,10 +27,6 @@ const Home = () => {
     dispatch(getAllCountries());
   },[dispatch])
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    dispatch(getAllCountries());
-  }
   const handleOrderingByName = (e) => {
     e.preventDefault();
     dispatch(orderByName(e.target.value))
@@ -47,11 +43,7 @@ const Home = () => {
   
   return (
     <div className='homePage'>
-      
-       <button onClick={e => {handleClick(e)}}>
-        volver a cargar los paises
-      </button> 
-      <div>
+
         <OrderingFilters onChangeName={handleOrderingByName}
                          onChangePopulation={handleOrderingByPopulation}/>
 
@@ -61,7 +53,6 @@ const Home = () => {
                     countries={countries.length}
                     pagination={pagination}
                     />
-      </div>
     </div>
   )
 }

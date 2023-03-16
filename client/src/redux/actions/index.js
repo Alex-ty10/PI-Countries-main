@@ -17,9 +17,10 @@ export function getAllCountries(){
   return async function(dispatch) {
     try {
       let response = await axios.get(`${RUTA_COUNTRIES}`)
+      const allCountries =  response.data
       dispatch({
         type: GET_ALL_COUNTRIES,
-        payload: response.data
+        payload: allCountries
       })
     } catch (e) {
       alert ('I cant get all the countries',e.message)
@@ -52,7 +53,7 @@ export function getCountryName(name){
         payload: countryName
       })
     } catch (e) {
-      alert ('I cant get that country',e.message)
+      alert (`Country "${name}" does not exist`,e.message)
     }
   }
 };
@@ -60,7 +61,7 @@ export function getCountryName(name){
 export function createActivity(payload){
   return async function(dispatch) {
     
-      let response = await axios.post(`${RUTA_ACTIVITIES}}`,payload)
+      let response = await axios.post(`${RUTA_ACTIVITIES}`,payload)
       return dispatch({
         type: CREATE_ACTIVITY,
         payload: response
