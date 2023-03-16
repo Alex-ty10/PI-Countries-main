@@ -21,7 +21,7 @@ router.post('/', async (req, res, next) => {
     if(difficulty > 5 || difficulty < 1){
       return res.status(404).send(`The difficulty ${difficulty} is not allowed`)
     }
-    if (!(season === 'winter' || season === 'summer' || season === 'spring' || season === 'autumn')){
+    if (!(season === 'Winter' || season === 'Summer' || season === 'Spring' || season === 'Autumn')){
       return res.status(404).send(`The season ${season} is not allowed`)
     }
     createAct = await createActivity(name, difficulty, duration, season, countries);
