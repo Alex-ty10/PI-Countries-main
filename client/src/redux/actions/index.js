@@ -10,13 +10,10 @@ export const ORDER_BY_POPULATION = 'ORDER_BY_POPULATION'
 export const FILTER_BY_ACTIVITIES = 'FILTER_BY_ACTIVITIES'
 export const FILTER_BY_CONTINENT = 'FILTER_CONTINENT'
 
-const RUTA_COUNTRIES = 'http://localhost:3001/countries'
-const RUTA_ACTIVITIES = 'http://localhost:3001/activities'
-
 export function getAllCountries(){
   return async function(dispatch) {
     try {
-      let response = await axios.get(`${RUTA_COUNTRIES}`)
+      let response = await axios.get('/countries')
       const allCountries =  response.data
       dispatch({
         type: GET_ALL_COUNTRIES,
@@ -31,7 +28,7 @@ export function getAllCountries(){
 export function getCountryID(id){
   return async function(dispatch) {
     try {
-      let response = await axios.get(`${RUTA_COUNTRIES}/${id}`)
+      let response = await axios.get(`/countries/${id}`)
       const countryID = response.data
       return dispatch({
         type: GET_COUNTRY_ID,
@@ -46,7 +43,7 @@ export function getCountryID(id){
 export function getCountryName(name){
   return async function(dispatch) {
     try {
-      let response = await axios.get(`${RUTA_COUNTRIES}?name=${name}`)
+      let response = await axios.get(`/countries?name=${name}`)
       const countryName = response.data
       return dispatch({
         type: GET_COUNTRY_NAME,
@@ -61,7 +58,7 @@ export function getCountryName(name){
 export function createActivity(payload){
   return async function(dispatch) {
     
-      let response = await axios.post(`${RUTA_ACTIVITIES}`,payload)
+      let response = await axios.post('/activities',payload)
       return dispatch({
         type: CREATE_ACTIVITY,
         payload: response
@@ -73,7 +70,7 @@ export function createActivity(payload){
 export function getAllActivities(){
   return async function(dispatch) {
     try {
-      let response = await axios.get(`${RUTA_ACTIVITIES}`)
+      let response = await axios.get('/activities')
       const allActivities = response.data
       return dispatch({
         type: GET_ALL_ACTIVITIES,
