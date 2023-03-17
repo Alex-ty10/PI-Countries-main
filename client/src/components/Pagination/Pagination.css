@@ -1,4 +1,5 @@
 .paginado {
+  font-family: 'Century Gothic', sans-serif;
   display: flex;
   justify-content: center;
   list-style: none;
@@ -6,24 +7,26 @@
   padding: 0;
 }
 
-.paginado li {
+.number {
   margin-right: 10px;
 }
 
-.paginado li:last-child {
-  margin-right: 0;
-}
-
-.paginado li a {
-  color: #333;
+.number a {
+  border: #ffffff 2px solid;
+  color: #ffffff;
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
-  background-color: #f2f2f2;
-  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.paginado li a:hover {
-  background-color: #0062cc;
-  color: #fff;
+.number:hover{
+  transform: scale(1.05);
 }
+
+.number a:hover {
+  background-color: #535b88;
+  color: #ffffff;
+}
+

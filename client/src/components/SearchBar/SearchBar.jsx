@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getCountryName } from "../../redux/actions";
+import lupa from '../../img/lupasearch.png'
 import './SearchBar.css'
 
 const SearchBar = () => {
@@ -22,15 +23,15 @@ const SearchBar = () => {
   };
    
   return (
-    <div className='search-bar'>
-      <form>
+    <div>
+      <form className='search-bar'>
         <input className='search-bar__input'
                type='text'
                value={name}
                onChange={e => handleOnChange(e)}
-               placeholder='search a country'/>
+               placeholder='Search a country'/>
         <NavLink to={`/search/${name}`}>
-          <button className='search-bar__btn' onClick={e => handleClick(e)}>Search</button>
+          <button className='search-bar__btn' onClick={e => handleClick(e)}><img src={lupa}alt="no image"></img></button>
         </NavLink>
       </form>
     </div>

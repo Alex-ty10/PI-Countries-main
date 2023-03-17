@@ -42,7 +42,7 @@ const Home = () => {
   
   
   return (
-    <div className='homePage'>
+    <div className='home-page'>
 
         <OrderingFilters onChangeName={handleOrderingByName}
                          onChangePopulation={handleOrderingByPopulation}/>

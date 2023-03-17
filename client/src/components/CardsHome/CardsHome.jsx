@@ -1,10 +1,9 @@
 import React from "react";
 import Card from "../CountryCard/CountryCard";
-import './CardsHome.css'
 
 const CardsHome = ({allCountries}) => {
   return(
-    <div>
+    <div className="cards"> 
       {allCountries?.map(c => {
         return(
           <Card  key={c.id}

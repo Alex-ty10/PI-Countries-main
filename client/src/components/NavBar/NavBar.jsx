@@ -3,26 +3,35 @@ import { NavLink } from 'react-router-dom';
 import SearchBar from "../SearchBar/SearchBar";
 import './NavBar.css'
 
-function NavBar(params) {
+function NavBar() {
     return(
-        <div className="navbar-container">
+    <div className="navbar-container">
                 
-             <div className="links">
-                    <div>
-                        <NavLink className="link" to='/home'>
-                            <div className="linkToHome">Inicio</div>
-                        </NavLink>
-                    </div>
-                    <div>
-                        <NavLink className="link" to='/create'>
-                            <div className="linkToCreate">Create a activity</div>
-                        </NavLink>
-                    </div>
-                    <div className="searchBar">
-                        <SearchBar/>
-                    </div>
-                </div>
+     <div className="nav">
+         <div>
+            <NavLink to='/'><button className="btnhenry">Henry Countries</button></NavLink>
         </div>
+        
+        <div className="container-link">
+        <div className="link">
+             <NavLink to='/home'>
+                    <div className="div-link">Home</div>
+              </NavLink>
+         </div>
+
+          <div>
+                <NavLink to='/create'>
+                      <div className="div-link">Create a activity</div>
+                  </NavLink>
+         </div>
+
+         <div className="search-bar">
+                <SearchBar/>
+        </div>
+        </div>
+                    
+     </div>
+    </div>
     )
 };
 

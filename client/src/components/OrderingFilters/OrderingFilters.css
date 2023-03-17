@@ -1,41 +1,30 @@
-.container {
+.container{
+  font-family: 'Century Gothic', sans-serif;
+  background-color: #00000a;
+  padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-right: 1rem;
+  justify-content: center;
 }
 
-.select {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  color: #2d2d2d;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  &:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
+.select,
+.clear-btn{
+  width: 10%;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 9px;
+  margin-left:20px;
+  border:2px solid;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-.ordering-name {
-  margin-right: 1rem;
+.select option{
+  background-color: #535b88;
 }
 
-.ordering-population {
-  margin-right: 1rem;
+.select:hover,
+.clear-btn:hover{
+  background-color: #535b88;
 }
-
-.filter-activities {
-  margin-right: 1rem;
-}
-
-.filter-continent {
-  margin-right: 1rem;
-}
-

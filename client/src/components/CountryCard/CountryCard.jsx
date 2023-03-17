@@ -9,8 +9,10 @@ const CountryCard = ({ id, name, flag_image, continent, activities }) => {
         <img className='container-country__Flag' src={flag_image} alt='HAY QUE BUSCAR'/>
         <div className='container-country__cardtext'>
           <p className='container-country__Title'>{name}</p>
-          <p className='container-country__text'>Continent: {continent}</p>
-          {activities && activities.length > 0 && (
+          <p className='container-country__text'>
+            <span className='continent-label'>Continent:</span> {continent}
+          </p>
+          {/* {activities && activities.length > 0 && (
             <ul>
               Activities: {activities?.map(a => {
                 return(
@@ -18,7 +20,7 @@ const CountryCard = ({ id, name, flag_image, continent, activities }) => {
                 )
               })} 
             </ul>
-          )}
+          )} */}
         </div>
       </div>
     </NavLink>

@@ -1,26 +1,34 @@
 .container-country {
   text-decoration: none;
-}
-
-.container-country__card {
   display: inline-block;
   width: calc(100% / 5);
   max-width: 250px;
-  margin: 10px;
+  margin: 0px;
+  padding: 10px 5px;
+  
+}
+
+.container-country__card {
+  background: rgb(83,91,136);
+  background: linear-gradient(180deg, rgba(83,91,136,1) 0%, rgba(83,91,136,1) 48%, rgba(149,158,226,1) 100%);
+  width: 200px;
+  color: white;
+  border-radius: 9px;
+  transition: .2s ease-in-out;
+  margin: 0;
+  box-shadow: 1px 1px 10px black;
   padding: 10px;
-  background-color: #f7f7f7;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out;
 }
 
 .container-country__card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.1);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .container-country__Flag {
-  width: 100%;
-  height: auto;
+  border-radius: 9px;
+  width: 200px;
+  height: 120px;
 }
 
 .container-country__cardtext {
@@ -28,32 +36,18 @@
 }
 
 .container-country__Title {
+  height: 40px;
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
 .container-country__text {
-  font-size: 0.9rem;
+  font-size: 15px;
   margin-bottom: 5px;
 }
 
-.container-country__cardtext ul {
-  font-size: 0.9rem;
-  margin-top: 5px;
-}
-
-.container-country__cardtext ul li {
-  color: #666;
-}
-
-.container-country__cardtext ul li:hover {
-  color: #333;
+.continent-label{
+  font-size: 16px;
   font-weight: bold;
-}
-
-.container-country:focus,
-.container-country:active,
-.container-country:hover {
-  outline: none;
 }
