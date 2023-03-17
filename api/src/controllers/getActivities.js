@@ -1,6 +1,6 @@
 const { Country, Activity } = require ('../db');
 
-module.exports = async function getActivies() {
+const getActivities = async() => {
   try {
     const data =  await Activity.findAll({
       include:[{
@@ -16,3 +16,11 @@ module.exports = async function getActivies() {
     return next(e)
   }
 };
+
+const deletetActivities = async(name) => {
+  const activity = await Activity.findOne({ where:{name}});
+  await activity.destroy();
+};
+
+
+module.exports={getActivities, deletetActivities };

@@ -1,12 +1,16 @@
 const { Router } = require('express');
 const router = Router();
-const getActivities =  require('../controllers/getActivities');
+const { deletetActivities } = require('../controllers/getActivities');
+const { getActivities } =  require('../controllers/getActivities');
 const createActivity =  require('../controllers/createActivity');
 
 router.get('/', async (req, res, next) => {
   try {
+    const { name } = req.query
     const activities = await getActivities();
-    return res.status(200).json(activities);
+    if(!name) return res.status(200).json(activities);
+    const activityName = await deletetActivities(name);
+    return res.status(200).send('the activity has been deleted')
   } catch (e) {
     return next(e)
   }
