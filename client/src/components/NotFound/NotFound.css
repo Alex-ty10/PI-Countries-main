@@ -1,0 +1,19 @@
+.notfound{
+  background-color: #00000a;
+  width: 550px;
+  height: 500px;
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
+  border: #ffffff 5px solid;
+  border-radius: 9px;
+}
+
+.notfound img{
+  width: 400px;
+  height: 400px;
+}
+
+.notfound h2{
+  color:  #ffffff;
+}

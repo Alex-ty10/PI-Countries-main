@@ -9,23 +9,25 @@
 }
 
 .container-country__card {
-  background: rgb(83,91,136);
+  /*background: rgb(83,91,136);
   background: linear-gradient(180deg, rgba(83,91,136,1) 0%, rgba(83,91,136,1) 48%, rgba(149,158,226,1) 100%);
+  */background-color: #1c1f36;
+  border: #ffffff 3px solid;
+  border-radius: 9px;
   width: 200px;
   color: white;
   border-radius: 9px;
   transition: .2s ease-in-out;
   margin: 0;
-  box-shadow: 1px 1px 10px black;
   padding: 10px;
 }
 
 .container-country__card:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .container-country__Flag {
+  border: #ffffff 3px solid;
   border-radius: 9px;
   width: 200px;
   height: 120px;

@@ -1,0 +1,22 @@
+.loading{
+  background-color: #00000a;
+  margin: auto;
+  margin-top: 200px;
+  width: 120px;
+  height: 150px;
+  border-radius: 9px;
+  border: #ffffff 1px solid;
+  
+  padding: auto;
+}
+
+.loading img{
+  width: 100px;
+  height: 100px;
+  margin: 10px 10px 1px 10px;
+}
+
+.loading h3{
+  margin-top: 0;
+  color:#ffffff;
+}

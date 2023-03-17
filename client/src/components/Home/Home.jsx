@@ -6,12 +6,14 @@ import { orderByName, orderByPopulation } from '../../redux/actions';
 import CardsHome from '../CardsHome/CardsHome';
 import OrderingFilters from '../OrderingFilters/OrderingFilters';
 import Pagination from '../Pagination/Pagination'
+import Loading from '../Loading/Loading';
 
 
 
 const Home = () => {
   const dispatch =  useDispatch()
   const countries = useSelector(state => state.countries)
+  const [isLoading, setIsLoading] = useState(true);
   const [order, setOrder] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const [countriesPerPage, setCountriesPerPage] = useState(10)
@@ -25,7 +27,18 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getAllCountries());
+    setIsLoading(false);
   },[dispatch])
+
+  //prueba loading
+  /* useEffect(() => {
+    const timer = setTimeout(() => {
+      dispatch(getAllCountries());
+      setIsLoading(false);
+    }, 000);
+  
+    return () => clearTimeout(timer);
+  }, [dispatch]); */
 
   const handleOrderingByName = (e) => {
     e.preventDefault();
@@ -43,16 +56,18 @@ const Home = () => {
   
   return (
     <div className='home-page'>
-
-        <OrderingFilters onChangeName={handleOrderingByName}
+      {isLoading ? <Loading /> 
+      : <div>
+          <OrderingFilters onChangeName={handleOrderingByName}
                          onChangePopulation={handleOrderingByPopulation}/>
 
-        <CardsHome allCountries={currentCountries}/>
+          <CardsHome allCountries={currentCountries}/>
 
-        <Pagination countriesPerPage={countriesPerPage}
-                    countries={countries.length}
-                    pagination={pagination}
-                    />
+          <Pagination countriesPerPage={countriesPerPage}
+                      countries={countries.length}
+                      pagination={pagination}
+                      />
+        </div>}
     </div>
   )
 }

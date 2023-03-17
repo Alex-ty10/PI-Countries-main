@@ -1,36 +1,27 @@
 import './App.css';
-import { Route, useLocation } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import Home from './components/Home/Home';
 import DetailCard from './components/DetailCard/DetailCard';
 import Landing from './components/Landing/Landing';
 import Form from './components/Form/Form';
 import NavBar from './components/NavBar/NavBar';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   let location = useLocation();
   return (
     <div className="App">
-
-     {location.pathname !== '/' && <NavBar />}
-      
-      <Route exact path='/'>
-        <Landing/>
-      </Route>
-
-      <Route exact path='/home'>
-        <Home/>
-      </Route>
-
-      <Route exact path='/create'>
-        <Form/>
-      </Route>
-
-      <Route exact path='/countries/:id'>
-        <DetailCard/>
-      </Route>
-
+      {location.pathname !== '/' && <NavBar />}
+      <Switch>
+        <Route exact path='/' component={Landing} />
+        <Route exact path='/home' component={Home} />
+        <Route exact path='/create' component={Form} />
+        <Route exact path='/countries/:id' component={DetailCard} />
+        <Route component={NotFound} />
+      </Switch>
     </div>
   );
 }
 
 export default App;
+
