@@ -26,7 +26,10 @@ const validate = (input, activities) => {
 
   //validacion de season
   if (!input.season) {errors.season = 'Select a season'};
-  
+
+  //validacion de countries
+  if(!input.countries) {errors.countries = 'Select a country'}
+
   return errors;
 };
 
@@ -84,10 +87,19 @@ const Form = () => {
   };
 
   const handleSelect = (e) => {
-    setInput({
+    const selectedCountry = e.target.value;
+    
+    // Si el país ya está en el array, no se agrega de nuevo
+    if (!input.countries.includes(selectedCountry)) {
+      setInput({
+        ...input,
+        countries: [...input.countries, selectedCountry]
+      });
+    }
+    setError(validate({
       ...input,
-      countries: [...input.countries, e.target.value]
-    });
+      countries: selectedCountry
+    }))
   };
 
   const handleDelete = (country) => {
@@ -95,11 +107,11 @@ const Form = () => {
       ...input,
       countries: input.countries.filter(c => c !== country)
     })
-    setError(
-      {
-        ...input,
-        countries: input.countries.filter(c => c !== country)
-      }
+    setError(validate({
+      ...input,
+      countries: input.countries.filter(c => c !== country)
+    })
+      
     )
   }
 

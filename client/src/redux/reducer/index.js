@@ -67,6 +67,15 @@ function rootReducer(state = inicialState, action){
             ...state,
             countries: orderingName,
           };
+
+         /*  case GET_COUNTRY_NAME:
+            const allCountries3 = state.allCountries;
+            const filtrados = allCountries3.filter((producto) => producto.name.toLowerCase().includes(action.payload));
+            console.log('este es' + filtrados)
+        return{
+          ...state,
+          countries: filtrados
+        }; */
           
 
         case FILTER_BY_ACTIVITIES:

@@ -105,3 +105,12 @@ export function filterByContinent(payload) {
    return dispatch({type: FILTER_BY_CONTINENT, payload})
   }
 };
+
+/* export function getCountryName(payload){
+  return function(dispatch) {
+      return dispatch({
+        type: GET_COUNTRY_NAME,
+        payload: payload
+      })
+  }
+}; */

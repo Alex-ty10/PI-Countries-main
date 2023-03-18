@@ -17,8 +17,8 @@ const Home = () => {
   const [order, setOrder] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const [countriesPerPage, setCountriesPerPage] = useState(10)
-  const indexOfLastCountry = currentPage * countriesPerPage
-  const indexOfFirstCountry = indexOfLastCountry - countriesPerPage
+  const indexOfLastCountry = currentPage * countriesPerPage;
+  const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
   const currentCountries = countries.slice(indexOfFirstCountry,indexOfLastCountry) 
 
    const pagination = (pageNumber) => {
