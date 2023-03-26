@@ -76,7 +76,6 @@ function rootReducer(state = inicialState, action){
           ...state,
           countries: filtrados
         }; */
-          
 
         case FILTER_BY_ACTIVITIES:
           const allCountries = state.allCountries;

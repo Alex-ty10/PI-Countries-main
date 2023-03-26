@@ -10,6 +10,7 @@ export const ORDER_BY_POPULATION = 'ORDER_BY_POPULATION'
 export const FILTER_BY_ACTIVITIES = 'FILTER_BY_ACTIVITIES'
 export const FILTER_BY_CONTINENT = 'FILTER_CONTINENT'
 
+
 export function getAllCountries(){
   return async function(dispatch) {
     try {
