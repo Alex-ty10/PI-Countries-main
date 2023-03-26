@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getCountryName } from "../../redux/actions";
-import lupa from '../../img/lupasearch.png'
+import lupa from '../../assets/lupasearch.png'
 import './SearchBar.css'
 
 const SearchBar = () => {

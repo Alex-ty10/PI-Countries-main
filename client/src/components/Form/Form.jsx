@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { getAllCountries, createActivity, getAllActivities, orderByName } from '../../redux/actions';
-import back from '../../img/back.png' 
+import back from '../../assets/back.png' 
 
 
 //validar los inputs del formulario

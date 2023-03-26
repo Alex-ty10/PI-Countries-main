@@ -1,7 +1,7 @@
 .landingPage {
   font-family: 'Century Gothic', sans-serif;
   height: 100vh;
-  background-image: url('../../img/Landing2.jpg');
+  background-image: url('../../assets/Landing2.jpg');
   background-size: cover;
   background-position: center;
   display: flex;

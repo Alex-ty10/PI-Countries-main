@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import{ useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
 import { getCountryID } from '../../redux/actions/index';
-import back from '../../img/back.png'
+import back from '../../assets/back.png'
 
 const DetailCard = () => {
   const dispatch = useDispatch();
