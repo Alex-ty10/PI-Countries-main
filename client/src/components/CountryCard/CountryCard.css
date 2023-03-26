@@ -24,6 +24,8 @@
 
 .container-country__card:hover {
   transform: scale(1.1);
+  background: rgb(83,91,136);
+  background: linear-gradient(180deg, rgba(83,91,136,1) 0%, rgba(83,91,136,1) 48%, rgba(149,158,226,1) 100%);
 }
 
 .container-country__Flag {
