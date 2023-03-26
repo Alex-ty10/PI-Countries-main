@@ -28,7 +28,7 @@ const validate = (input, activities) => {
   if (!input.season) {errors.season = 'Select a season'};
 
   //validacion de countries
-  if(!input.countries) {errors.countries = 'Select a country'}
+  if(!input.countries.length) {errors.countries = 'Select a country'}
 
   return errors;
 };
@@ -95,11 +95,12 @@ const Form = () => {
         ...input,
         countries: [...input.countries, selectedCountry]
       });
-    }
-    setError(validate({
-      ...input,
-      countries: selectedCountry
-    }))
+
+      setError(validate({
+        ...input,
+        countries: [...input.countries, selectedCountry]
+      },activitiesCheck));
+    } 
   };
 
   const handleDelete = (country) => {
@@ -110,9 +111,7 @@ const Form = () => {
     setError(validate({
       ...input,
       countries: input.countries.filter(c => c !== country)
-    })
-      
-    )
+    },activitiesCheck));
   }
 
   const handleSubmit = (e) => {

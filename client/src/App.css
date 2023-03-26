@@ -1,6 +1,7 @@
 .App {
-  background-image: url('../src/img/background5.jpg');
-  background-size: 30%;
+  /* background-image: url('../src/img/background5.jpg');
+  background-size: 30%; */
+  background-color: #00000a;
   height: 100vh;
   text-align: center;
   font-family: 'Century Gothic', sans-serif;
